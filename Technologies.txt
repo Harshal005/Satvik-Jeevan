@@ -1,0 +1,12 @@
+
+favicon.io - for website favicon
+Remixicon.com - free website to use icons
+tailwind css - for easy css
+connect-flash  - used for showing flash messages like "Password and username is incorrect"
+Passport js middleware - for authentication and authorization
+Locomotive js - for smooth scrolling
+Gsap - for animations
+mongoose js - database library to connect with mongodb
+multer - to upload photos and videos
+
+

@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* color: white; */
+}
+.apply-main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.apply-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/yoga teacher 3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8; /* Adjust the opacity value as needed */
+}
+
+.apply-main > * {
+    position: relative;
+    z-index: 1;
+}
+
+.apply-inner{
+    border: 1px solid rgb(48, 43, 43);
+    width: 60%;
+    padding: 2%;
+}
+.apply-inner option{
+    color: black;
+}
+.black-text{
+    color: black;
+}
+
+    

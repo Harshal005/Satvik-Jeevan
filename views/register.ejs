@@ -1,0 +1,296 @@
+<% include ./common/header.ejs%>
+<!-- <div class="w-full h-screen bg-cover bg-[url('/images/indianculture.jpg')] flex items-center justify-center">
+  <div class="w-[30vw] h-[65vh] bg-zinc-100 px-4 py-8 rounded-lg">
+    
+      <h1 class="text-3xl mb-2 leading-none text-center capitalize">Create New Account </h1>
+    
+    <form action="">
+      <input class="border-2 rounded-md block w-full mt-5 px-3 py-2" type="text" name="username" id="" placeholder="username">
+      <input class="border-2 rounded-md block w-full mt-2 px-3 py-2" type="email" name="email" id="" placeholder="email">
+      <input class="border-2 rounded-md block w-full mt-2 px-3 py-2" type="number" name="contact" id="" placeholder="phone no">
+      <input class="border-2 rounded-md block w-full mt-2 px-3 py-2" type="password" name="password" id="" placeholder="password">
+      <input class="border-2 rounded-full block w-full mt-5 px-3 py-2 bg-orange-500 text-white" value="Create New Account" type="submit">
+      <a class="inline-block mt-7 text-sm font-semibold w-full text-zinc-700 text-center" href="/">Login Existing Account</a>
+    </form>
+  </div>
+</div> -->
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    height: 100vh;
+    width: 100vw;
+    background-color:violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main-inner{
+    /* display: flex; */
+    padding: 0 20px;
+    background-color: burlywood;
+    min-height: 80vh;
+    width: 30vw;
+}
+.formdesign{
+    font-size: 20px;
+}
+.formdesign input{
+    width: 100%;
+    border-radius: 6px;
+    padding: 7px 4px;
+    font-size: 16px;
+    margin: 5px 0;
+}
+.formerror{
+    color: red;
+    font-size: 19px;
+    /* margin-left: 4vw; */
+}
+#register{
+    padding: 7px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+    color: #FFE7BF;
+    background-color: #A10035;
+    margin-top: 4px;
+    
+}
+#register:hover{
+    cursor: pointer;
+    background-color: #FF869E;
+}
+</style>
+  
+
+<div class="w-full min-h-screen bg-cover bg-[url('/images/indianculture.jpg')] flex items-center justify-center">
+  <div class=" sm:w-[30vw] sm:min-h-[65vh] bg-zinc-100 px-4 py-8 rounded-lg">
+    <h1 class="text-3xl leading-none text-center capitalize">Create New Account</h1>
+    
+    <form action="/register" method="post" name="myform" onsubmit="return validateform()">
+
+      <div class="formdesign" id="name">
+        <!-- Name : <br /> -->
+        <input
+          type="text"
+          name="username"
+          id="username"
+          required
+          placeholder="Enter your name"
+        />
+        <br /><b>
+          <span class="formerror"></span>
+        </b>
+      </div>
+
+      <div class="formdesign" id="emailid">
+        <!-- Email : <br /> -->
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="Enter your email"
+        />
+        <br /><b>
+          <span class="formerror"></span>
+        </b>
+      </div>
+
+      <div class="formdesign" id="contact">
+        <!-- Phone No : <br /> -->
+        <input
+          type="number"
+          name="phonenumber"
+          id="phonenumber"
+          required
+          placeholder="Enter your contact no"
+        />
+        <br /><b>
+          <span class="formerror"></span>
+        </b>
+      </div>
+
+      <div class="formdesign" id="pass">
+        <!-- Password : <br /> -->
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          placeholder="Enter your password"
+        />
+        <br /><b>
+          <span class="formerror"></span>
+        </b>
+      </div>
+
+      <div class="formdesign" id="cpass">
+        <!-- Confirm Password : <br /> -->
+        <input
+          type="password"
+          name="confirmpassword"
+          id="confirmpassword"
+          required
+          placeholder="Enter your password"
+        />
+        <br /><b>
+          <span class="formerror"></span>
+        </b>
+      </div>
+
+      <input type="submit" value="Register" id="register" />
+
+
+<!-- 
+
+      <input class="border-2 rounded-md block w-full mt-5 px-3 py-2"  required type="text" name="username" placeholder="username">
+      <input class="border-2 rounded-md block w-full mt-2 px-3 py-2" required  type="email" name="email" placeholder="email">
+      <input class="border-2 rounded-md block w-full mt-2 px-3 py-2"  required type="number" name="contact" placeholder="phone no">
+      <input class="border-2 rounded-md block w-full mt-2 px-3 py-2"  required type="password" name="password" placeholder="password">
+      <input class="border-2 rounded-full block w-full mt-5 px-3 py-2 bg-orange-500 text-white" value="Create New Account" type="submit">
+      <a class="inline-block mt-7 text-sm font-semibold w-full text-zinc-700 text-center" href="/login">Login Existing Account</a> -->
+    </form>
+  </div>
+</div>
+
+  <script>
+    function clearerrors(){
+    errors = document.getElementsByClassName('formerror');
+    for(let item of errors){
+        item.innerHTML = "";
+        item.style.border = "";
+    }
+    nameborder = document.getElementById('username');
+    nameborder.style.border = "";
+    emailborder = document.getElementById('email');
+    emailborder.style.border = "";
+    phoneborder = document.getElementById('phonenumber');
+    phoneborder.style.border = "";
+    passwordborder = document.getElementById('password');
+    passwordborder.style.border = "";
+    cpasswordborder = document.getElementById('confirmpassword');
+    cpasswordborder.style.border = "";
+}
+
+
+
+
+function seterror(id, error){
+    //sets error inside tag of id
+
+    element = document.getElementById(id);
+    element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+
+function validatePassword(password) {
+    // Define regular expressions for each required character type
+    var uppercaseRegex = /[A-Z]/;
+    var lowercaseRegex = /[a-z]/;
+    var specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+    var numberRegex = /[0-9]/;
+
+    // Check if password meets all criteria
+    var hasUppercase = uppercaseRegex.test(password);
+    var hasLowercase = lowercaseRegex.test(password);
+    var hasSpecialChar = specialCharRegex.test(password);
+    var hasNumber = numberRegex.test(password);
+
+    // Return true if all criteria are met, false otherwise
+    return hasUppercase && hasLowercase && hasSpecialChar && hasNumber;
+}
+
+function isValidEmail(email) {
+  // Regular expression pattern for email validation
+  const emailPattern = /^[\w-]+(?:\.[\w-]+)*@(?:gmail\.com|yahoo\.co\.in)$/;
+
+  // Test if the email matches the pattern
+  return emailPattern.test(email);
+}
+
+function isValidMobileNumber(mobileNumber) {
+  // Regular expression pattern for mobile number validation
+  // const mobilePattern = /^[6-9]\d{9}$/;
+  const mobilePattern = /^[6-9]/;
+  // Test if the mobile number matches the pattern
+  return mobilePattern.test(mobileNumber);
+}
+
+
+function validateform(){
+    var returnvalue = true;
+    clearerrors();
+
+    //performing validations and if validations fails, set the value of returnval to false
+    var name = document.forms['myform']["username"].value;
+    var namebox = document.getElementById("username");
+    if(name.length<6){
+        namebox.style.border = "2px solid red";
+        seterror("name","* Length of name is too short!");
+        // console.log("too short")
+        returnvalue = false;
+    }
+
+    var email = document.forms['myform']["email"].value;
+    var emailbox = document.getElementById("email");
+    // if(email.length>30 ){
+    //     emailbox.style.border = "2px solid red";
+    //     seterror("emailid","* Length of email is too long!");
+    //     // console.log("too short")
+    //     returnvalue = false;
+    // }
+    if(!isValidEmail(email)){
+        emailbox.style.border = "2px solid red";
+        seterror("emailid","* Enter valid email!");
+        returnvalue = false;
+    } else if(email.length>30 ){
+        emailbox.style.border = "2px solid red";
+        seterror("emailid","* Length of email is too long!");
+        returnvalue = false;
+    }
+
+    var phone = document.forms['myform']["phonenumber"].value;
+    var phonebox = document.getElementById("phonenumber");
+    if(!isValidMobileNumber(phone)){
+        phonebox.style.border = "2px solid red";
+        seterror("contact","* Enter valid contact number!");
+        // console.log("too short")
+        returnvalue = false;
+    }else if(phone.length!=10){
+        phonebox.style.border = "2px solid red";
+        seterror("contact","* Length of contact no should be 10!");
+        // console.log("too short")
+        returnvalue = false;
+    }
+    
+
+    var password = document.forms['myform']["password"].value;
+    var passwordbox = document.getElementById("password");
+    if(password.length<6 || !validatePassword(password)){
+        passwordbox.style.border = "2px solid red";
+        seterror("pass","* Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 special character, and 1 number!");
+        // console.log("too short")
+        returnvalue = false;
+    }
+
+    var cpassword = document.forms['myform']["confirmpassword"].value;
+    var cpasswordbox = document.getElementById("confirmpassword");
+    if(cpassword!=password){
+        cpasswordbox.style.border = "2px solid red";    
+        seterror("cpass","* Password and confirm password should match!");
+        // console.log("too short")
+        returnvalue = false;
+    }
+
+
+    return returnvalue;
+}
+  </script>
+
+<% include ./common/footer.ejs%>

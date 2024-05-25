@@ -1,0 +1,113 @@
+<% include ./common/header.ejs %> <% include ./common/navbar.ejs %>
+
+<!-- Back Button -->
+<div class="back-btn">
+  <a href="/category/<%= openedcategory %>"
+    ><i class="ri-arrow-left-line mr-3"></i>Back</a
+  >
+</div>
+
+<!-- Main Body -->
+<div class="showpost-main">
+  <div class="showblog">
+    <!-- Blog Image -->
+    <% if(currentpost.length > 0) { %>
+      <% currentpost.forEach(function(cpost) { %>
+    <div class="blogimg">
+      <img src="/images/uploads/<%= cpost.image %>" alt="" />
+    </div>
+
+    <!-- Blog Title -->
+    <div class="title">
+      <h1 class="blog-title">
+        <%= cpost.title %>
+      </h1>
+
+      <!-- Like Icon -->
+
+      <!-- <div class="like">
+        <p>Add to favourites</p>
+        <a href=""><i class="fa fa-heart-o" style="font-size:41px;color:rgb(0, 0, 0)"></i></a>
+        <p>Added to favourites</p>
+        <a href=""><i class="fa fa-heart" style="font-size:41px;color:red; display:none;"></i></a>
+      </div> -->
+      <div class="like">
+        <% if(postliked==true) { %>
+          <p class="addedfav" >
+          <!-- style="display: none;" -->
+          Added to favourites</p>
+        <a href="/category/<%= openedcategory %>/<%= openedpost %>/unlike">
+          <i class="fa fa-heart" style="font-size:41px;color:red;"></i>
+        </a>
+
+        <% } else if(postliked==false) { %>
+          <p class="addtofav">Add to favourites</p>
+        <a href="/category/<%= openedcategory %>/<%= openedpost %>/like">
+          <i class="fa fa-heart-o" style="font-size:41px;color:rgb(0, 0, 0)"></i>
+        </a>
+        <% } else { %>
+        <p class="addtofav">Add to favourites</p>
+        <a href="/category/<%= openedcategory %>/<%= openedpost %>/like">
+          <i class="fa fa-heart-o" style="font-size:41px;color:rgb(0, 0, 0)"></i>
+        </a>
+        <% } %>
+      </div>
+    </div>
+
+
+
+    <!-- Blog Description -->
+    <div class="blog-desc">
+      <p>
+        <% cpost.description.split('\n').forEach(function(line) { %>
+          <p><%= line %></p>
+          <% }); %>
+      </p>
+        
+      <!-- <p>
+        <%= cpost.description %>
+      </p> -->
+
+      <% }); } else { %>
+        <h1 class="alsoread" style="color: red;">Sorry Cannot show the blog at this moment</h1>
+      <% } %>
+    </div>
+
+    <!-- Other blogs -->
+    <h1 class="alsoread">People also read these</h1>
+    <div class="swiper mySwiper1">
+      <div class="swiper-wrapper">
+        <% if(posts.length > 0) { %>
+            <% posts.forEach(function(suggestedpost) { %>
+        <div class="swiper-slide">
+            <a href="/category/<%= openedcategory %>/<%= suggestedpost._id %>">
+
+                <img src="/images/uploads/<%= suggestedpost.image %>" alt="" height="300px" width="300px">
+                <h1><%= suggestedpost.title %></h1>
+            </a>
+        </div>
+        <% }); } else { %>
+          <h1 class="alsoread">No posts available</h1>
+          <% } %>
+        <!-- <div class="swiper-slide">
+            slide 2
+        </div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div> -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+
+    
+    
+ 
+<% include ./common/pagefooter.ejs %>
+<% include ./common/footer.ejs %>

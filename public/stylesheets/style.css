@@ -1,0 +1,24 @@
+@font-face {
+  font-family: Cardo;
+  src: url(./Cardo-Regular.ttf);
+}
+@font-face {
+  font-family: Devanagari;
+  src: url(./NotoSerifDevanagari-Bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cardo;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+

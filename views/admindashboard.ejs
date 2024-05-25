@@ -1,0 +1,51 @@
+<% include ./Admin/adminheader.ejs %> <% include ./Admin/sidebar.ejs %> <%
+include ./Admin/adminnavbar.ejs %>
+
+<div class="maincontent">
+   <div id="insights">
+      <div class="analytics">
+         <div class="analytics-content">
+            <div class="flex justify-center content-center mt-2 analytics-content-inner" >
+               <h1 class="analytics-count"><%= allusers.length %></h1>
+               <h4>Users</h4>
+               <h5>From different countries</h5>
+            </div>
+            <i class="ri-user-line analytics-icon"></i>
+         </div>
+      </div>
+      <div class="analytics">
+         <div class="analytics-content">
+            <div class="flex justify-center content-center mt-2 analytics-content-inner" >
+               <h1 class="analytics-count"><%= allposts.length %></h1>
+               <h4>Posts</h4>
+               <h5>Among different Categories</h5>
+            </div>
+            <i class="ri-news-line analytics-icon"></i>
+         </div>
+      </div>
+      <div class="analytics">
+         <div class="analytics-content">
+            <div class="flex justify-center content-center mt-2 analytics-content-inner" >
+               <h1 class="analytics-count"><%= allfeedbacks.length %></h1>
+               <h4>Feedbacks</h4>
+               <h5>From Satvik Jeevan Users</h5>
+            </div>
+            <i class="ri-feedback-line analytics-icon"></i>
+         </div>
+      </div>
+      <div class="analytics">
+         <div class="analytics-content">
+            <div class="flex justify-center content-center mt-2 analytics-content-inner" >
+               <h1 class="analytics-count"><%= alltrainers.length %></h1>
+               <h4>Trainers</h4>
+               <h5>Across Global</h5>
+            </div>
+            <i class="ri-user-2-line analytics-icon"></i>
+         </div>
+      </div>
+   </div>
+
+
+</div>
+
+<% include ./Admin/adminfooter.ejs %>

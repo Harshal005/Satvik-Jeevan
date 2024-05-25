@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.playvideomain{
+    background-color: #FFE7BF;
+}
+#playVideo{
+    /* height: 50%; */
+    width: 90%;
+    margin-left: 5%;
+}

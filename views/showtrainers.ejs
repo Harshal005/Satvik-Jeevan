@@ -1,0 +1,37 @@
+<% include ./Admin/adminheader.ejs %>
+<% include ./Admin/sidebar.ejs %>
+<% include ./Admin/adminnavbar.ejs %>
+
+    <div class="maincontent">
+         <% if(alltrainers.length > 0) { %>
+                <table class="tbl">
+            <tr>
+                <th>User Id</th>
+                <th>Full Name</th>
+                <th>Expertise</th>
+                <!-- <th>Uploaded Posts</th> -->
+                <th>Actions</th>
+            </tr>
+                <% alltrainers.forEach(function(trainer) {  %>
+            <tr>
+                <td class="userid"><%=  trainer._id %></td>
+                <td><%= trainer.fullname %></td>
+                <td><%= trainer.Expertise %></td>
+                <!-- <td><%= trainer.uploadedposts %></td> -->
+                <td>
+                    <div class="useractions">
+                        
+                        <a href="/deletetrainer/<%= trainer._id %>" class="deleteuser">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+            <% } else { %>
+                
+                    <p style="color: red; margin: 20% 0 0 40%; font-size: 2vw;" >No Trainer records</p>
+                
+                <% }%>
+    </div>
+
+<% include ./Admin/adminfooter.ejs %>

@@ -1,0 +1,98 @@
+<div class="wrapper">
+  <label for="menu-toggle" class="menu-btn">
+    <!-- onclick="sidebartoggle()" -->
+    <i class="ri-menu-line"></i
+  ></label>
+
+  <nav id="sidebar">
+    <div class="title">Satvik Jeevan</div>
+    <ul class="list-items">
+      <li>
+        <a href="/admindashboard"><i class="ri-home-3-line"></i>Home</a>
+      </li>
+      <li>
+        <a href="/showusers"><i class="ri-user-line"></i>Users</a>
+      </li>
+      
+      <li>
+        <a href="/showfeedbacks"><i class="ri-feedback-line"></i>Feedbacks</a>
+      </li>
+      <li>
+        <a href="/showtrainers"><i class="ri-admin-line"></i>Trainers</a>
+      </li>
+      <li>
+        <a href="/showtrainerrequests"
+          ><i class="ri-chat-follow-up-line"></i>Trainers Requests</a
+        >
+      </li>
+      <li id="sublist" >
+        <a href="/showposts" class="posts-btn"
+          ><i class="ri-news-line"></i>Posts<i
+            class="ri-arrow-down-wide-fill first"
+            id="expand"
+          ></i
+        ></a>
+        <ul class="sublist-items post-show">
+          <li class="sublist-li"><a href="/showposts/spiritualityandphilosophy">Spirituality and Philosophy</a></li>
+          <li class="sublist-li"><a href="/showposts/herbalremedies">Herbal Remedies</a></li>
+          <li class="sublist-li"><a href="/showposts/healthandwellness">Health and Wellness</a></li>
+          <li class="sublist-li"><a href="/showposts/dietandnutrition">Diet and Nutrition</a></li>
+          <li class="sublist-li"><a href="/showposts/mindfulnessandmeditation">Mindfulness and Meditation</a></li>
+          <li class="sublist-li"><a href="/showposts/massageandrelaxation">Massage and Relaxation</a></li>
+        </ul>
+      </li>
+<!-- 
+      <div class="icons">
+        <a href=""><i class="ri-facebook-fill"></i></a>
+        <a href=""><i class="ri-github-fill"></i></a>
+        <a href=""><i class="ri-instagram-line"></i></a>
+      </div> -->
+    </ul>
+  </nav>
+</div>
+<script>
+    $('.posts-btn').click(function(e) {
+        e.preventDefault(); // Prevent the default behavior of the anchor element
+    
+        var sublist = $('#sidebar .list-items .post-show'); // Select the sublist items
+        var expandIcon = $('#expand'); // Select the expand icon
+    
+        // Toggle the 'show' class for the sublist items
+        sublist.toggleClass('show');
+    
+        // Toggle the class to rotate the expand icon
+        expandIcon.toggleClass('rotate');
+    
+        // Check if the sublist items are visible after toggling
+        if (sublist.hasClass('show')) {
+            // If yes, add the class to rotate the expand icon
+            expandIcon.addClass('rotate');
+        } else {
+            // If not, remove the class to reset the expand icon rotation
+            expandIcon.removeClass('rotate');
+        }
+    });
+//     $('.posts-btn').click(function(){ 
+//         $('#sidebar .list-items .post-show').toggleClass('show');
+        
+//  }); 
+
+// $('.posts-btn').click(function(e) {
+//     e.preventDefault(); // Prevent the default behavior of the anchor element
+
+//     var sublist = $('#sidebar .list-items .post-show'); // Select the sublist items
+
+//     // Check if the sublist items are already visible
+//     if (sublist.hasClass('show')) {
+//         sublist.removeClass('show'); // If yes, remove the 'show' class to hide them
+//     } else {
+//         // If not, hide all other sublist items and then show the clicked sublist items
+//         $('.sublist-items').removeClass('show'); 
+//         sublist.addClass('show');
+//         $('#sidebar .list-items #expand').toggleClass('rotate');
+//     }
+// });
+
+
+
+</script>

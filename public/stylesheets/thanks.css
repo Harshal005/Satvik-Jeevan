@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+#thanks-main{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC4C4;
+}
+#thanks-inner{
+    height: 90vh;
+    width: 80vw;
+    background-color:blueviolet;
+}
+#thanks-inner{
+    display: flex;
+}
+#thanks-left{
+    height: 100%;
+    width: 50vw;
+    background-image: url('/images/feedback\ namaste.jpg');
+    background-size: cover;
+}
+#thanks-right{
+    width: 30vw;
+    height: inherit;
+    background-color: #FF869E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#thanks-right h2{
+    font-size: 1.6vw;
+}
+#thanks-right a{
+    margin-top: 1.5vh;
+    padding: 1vw;
+    background-color: #A10035;
+    color: #FFC4C4;
+    border-radius: 10px;
+}
+#thanks-right a:hover{
+    cursor: pointer;
+    color: #FF869E;
+}

@@ -1,0 +1,120 @@
+<!-- <div class="header">
+    <div class="header-content">
+
+      <a href="" class="logo">Satvik Jeevan</a>
+
+      <ul class="navbar">
+        <li><a href="" class="box">Home</a></li>
+        <li><a href="/profile" class="box">Profile</a></li>
+        <li><a href="/feedback" class="box">Feedback</a></li>
+        <li><a href="/applytrainer" class="box">Apply</a></li>
+        <li><a href="/logout" class="box">Logout</a></li>
+      </ul>
+
+      <div class="main">
+        <a href="/login" class="user box"><i class="ri-user-fill"></i>Log In</a>
+        <a href="/register" class="box">Register</a>
+        <i class="ri-menu-line" id="menu-icon"></i>
+      </div>
+    </div>
+  </div>
+
+   -->
+   
+
+<% if(nav==="userLoggedIn" && user.usertype == 1){ %>
+
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      Satvik Jeevan
+    </div> 
+    <div class="links">
+      <a href="/" class="center-links">Home</a>
+      <a href="/profile" class="center-links">Profile</a>
+      <a href="/feedback" class="center-links">Feedback</a>
+      <!-- <a href="/applyfortrainer" class="center-links">Apply</a> -->
+      <a href="/about" class="center-links">About</a>
+    </div>
+    <div class="auth-links">
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="menu">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+      </a>
+    </div>
+  </div>
+<% } else if(nav==="userLoggedIn" && user.usertype == 2){ %>
+
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      Satvik Jeevan
+    </div>
+    <div class="links">
+      <a href="/" class="center-links">Home</a>
+      <a href="/profile" class="center-links">Profile</a>
+      <!-- <a href="/feedback" class="center-links">Feedback</a> -->
+      <!-- <a href="/applyfortrainer" class="center-links">Apply</a> -->
+      <a href="/admindashboard" class="center-links">Admin Dashboard</a>
+      <a href="/about" class="center-links">About</a>
+    </div>
+    <div class="auth-links">
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="menu">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+      </a>
+    </div>
+  </div>
+
+  
+<% } else if(nav==="userLoggedIn" && user.usertype == 0){ %>
+
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      Satvik Jeevan
+    </div>
+    <div class="links">
+      <a href="/" class="center-links">Home</a>
+      <a href="/profile" class="center-links">Profile</a>
+      <a href="/feedback" class="center-links">Feedback</a>
+      <a href="/applyfortrainer" class="center-links">Apply</a>
+      <!-- <a href="//admindashboard" class="center-links">Admin Dashboard</a> -->
+      <a href="/about" class="center-links">About</a>
+    </div>
+    <div class="auth-links">
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="menu">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+      </a>
+    </div>
+  </div>
+<% } else { %>
+<!-- if(nav==="userNotLoggedIn") -->
+
+  <div class="navbar" id="myNavbar">
+    <div class="logo">
+      Satvik Jeevan
+    </div>
+    <div class="links">
+      <a href="/" class="center-links">Home</a>
+      <!-- <a href="/thanks" class="center-links">Test</a> -->
+      <a href="/feedback" class="center-links">Feedback</a>
+      <a href="/applyfortrainer" class="center-links">Apply</a>
+      <a href="#about" class="center-links">About</a>
+
+    </div>
+    <div class="auth-links">
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    </div>
+    <div class="menu">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        &#9776;
+      </a>
+    </div>
+  </div>
+<% } %>

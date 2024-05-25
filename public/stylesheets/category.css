@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.pageheading{
+    margin-left: 3%;
+    font-size: 2vw;
+}
+.sap-bg{
+     border: 1px solid black;
+     padding: 2vw;
+     min-height: 100%;
+        width: 100%;
+        background-color: #FFE7BF;
+}
+.cards-section{
+    height: 90%;
+    width: full;
+    margin: 1% 0% 3% 3%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap: 30px;
+}
+.cards{
+    height: 50vh;
+    background-color: #A10035;
+    /* background-color: #FFC4C4; */
+    min-width: 28vw;
+    border-radius: 3%;
+    overflow: hidden;
+}
+.cards:hover{
+  box-shadow: 5px 10px 30px #3b272b;
+  cursor: pointer;
+}
+.cards-img{
+    height: 65%;
+    width: 100%;
+    /* background-color: blue; */
+    object-fit:fill;
+}
+.explore-card{
+    padding: 5px;
+    background-color: #FFE7BF;
+    color: #A10035;
+    font-weight: 600;
+    border-radius: 2px;
+    margin: 10px 0 10px 10px;
+}
+.explore-card:hover{
+  /* background-color: #fcd797; */
+  border-radius: 7px;
+  background-color: #FF869E;
+  color: black;
+}
+.card-title{
+    margin: 10px 0 10px 10px;
+    /* font-size: 1.4vw; */
+    font-size: larger;
+    font-weight: 600;
+    color: #FFE7BF;
+}
+.card-content{
+    word-wrap: break-word;
+    white-space: nowrap; 
+    width: 350px;
+    height: 60px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+/*
+
+
+.card {
+  max-width: 300px; 
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.card-description {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+/*

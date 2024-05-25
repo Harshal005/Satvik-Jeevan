@@ -1,0 +1,36 @@
+
+
+#insights{
+    border: 1px solid black;
+    height: 90vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 60px;
+    background-color: #FFE7BF;
+}
+.analytics{
+    background-color: #A10035;
+    color: #FFE7BF;
+    height: 30vh;
+    width: 30vw;
+    border-radius: 20px;
+}
+.analytics-content{
+    display: flex;
+    justify-content: space-between;
+}
+.analytics-content-inner{
+    margin-left: 50px;
+    
+}
+.analytics-count{
+    font-size: 70px;
+}
+.analytics-icon{
+    padding-top: 9px;
+    padding-right: 30px;
+    font-size: 7vw;
+}

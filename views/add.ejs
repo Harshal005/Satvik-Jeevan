@@ -1,0 +1,51 @@
+<% include ./common/header.ejs %>
+<% include ./common/navbar.ejs %>
+
+    <style>
+        #title{
+            width: 40vw;
+        }
+        #desc{
+            width: 40vw;
+
+        }
+
+        @media (max-width:800px) {
+            #title{
+                width: 80vw;
+            }
+            #desc{
+                width: 80vw;
+            }
+        }
+    </style>
+
+
+    <div class="w-full min-h-screen bg-[#FFE7BF] px-10 py-5 ">
+        <h1 class="text-2xl">Create a New Post</h1>
+
+        <form action="/createpost" method="post" enctype="multipart/form-data">
+
+            <label for="postfile">Upload Image : </label><input class="mt-2" required type="file" 
+            name="postfile" id="" ><br>
+
+            <label for="post_category">Select Category : </label>
+            <select class="mt-3" name="post_category" id="post_category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="herbalremedies">Herbal Remedies</option>
+                <option value="healthandwellness">Health and Wellness</option>
+                <option value="dietandnutrition">Diet and Nutrition</option>
+                <option value="mindfulnessandmeditation">Meditation</option>
+                <option value="massageandrelaxation">Massage and Relaxation</option>
+                <option value="spiritualityandphilosophy">Spirituality and Philosophy</option>
+            </select>
+
+            <input class="px-3 py-2 rounded-md block mt-3" type="text" name="title" id="title" required placeholder="Enter the title" style="border: 1px solid black;">
+
+            <textarea class="px-3 py-2 rounded-md block mt-3" name="description" required id="desc" cols="30" rows="10" placeholder="Enter the description" style="border: 1px solid black;"></textarea>
+
+            <input type="submit" class="block px-3 py-2 bg-orange-500 text-white rounded-lg mt-3" value="Create Post" style="cursor: pointer;">
+        </form>
+    </div>
+
+<% include ./common/footer.ejs %>

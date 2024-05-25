@@ -1,0 +1,184 @@
+<% include ./common/header.ejs %>
+
+<!-- <div id="loader">
+  <h3 id="first">Sanatan is not just a way of life</h3>
+  <h3 id="second">
+    its a way of living
+    <h3 id="imp">healthy life</h3>
+  </h3>
+</div> -->
+<div id="main">
+  <% include ./common/navbar.ejs%>
+  <div id="page1">
+    <div id="cursor">
+      <h1>Play Video</h1>
+    </div>
+    <video
+      id="hinduismvideo"
+      loop
+      muted
+      autoplay
+      src="/videos/hinduismexplained.mp4"
+    ></video>
+    <div id="page1-content">
+      <!-- <h1>
+        <span>ॐ</span>
+        <span>न</span><span>मः</span> <span>शि</span><span>वा</span
+        ><span>य</span> 
+      </h1>  -->
+    </div>
+  </div>
+
+  <div id="page3">
+    <h1 id="title">We are Satvik Jeevan,</h1>
+    <div class="page3-container">
+      <div class="page3-left">
+        <h2 class="sj-desc">
+          Discover ancient Indian wisdom for holistic living at Satvik Jeevan
+        </h2>
+      </div>
+      <div class="page3-right">
+        <p class="sj-desc1">
+          Satvik Jeevan beckons seekers of inner peace and wellness to embark on
+          a transformative journey guided by ancient Indian wisdom. Through
+          insightful teachings, practices, and resources, our website offers a
+          sanctuary for those yearning to harmonize mind, body, and spirit,
+          fostering a life of balance, vitality, and spiritual fulfillment.
+        </p>
+        <a href="/views/about.ejs">
+          <div id="about-button">About Us</div>
+        </a>
+      </div>
+    </div>
+
+    <div id="moving-text">
+      <div class="con">
+        <h1>Balance & Bliss</h1>
+        <div id="gola"></div>
+        <h1>Holistic Lifestyle</h1>
+        <div id="gola"></div>
+        <h1>Soulful Practices</h1>
+        <div id="gola"></div>
+      </div>
+      <div class="con">
+        <h1>Balance & Bliss</h1>
+        <div id="gola"></div>
+        <h1>Holistic Lifestyle</h1>
+        <div id="gola"></div>
+        <h1>Soulful Practices</h1>
+        <div id="gola"></div>
+      </div>
+      <div class="con">
+        <h1>Balance & Bliss</h1>
+        <div id="gola"></div>
+        <h1>Holistic Lifestyle</h1>
+        <div id="gola"></div>
+        <h1>Soulful Practices</h1>
+        <div id="gola"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page2">
+    <div id="page2-elements">
+      <div class="box">
+        <img src="/images/ganesha.jpg" alt="" />
+        <video autoplay muted loop src="/videos/VID_20240324175728.mp4"></video>
+        <a href="/category/spiritualityandphilosophy" class="dets"
+          >Spirituality and Philosophy</a
+        >
+      </div>
+      <div class="box">
+        <img src="/images/herbal remedy.jpg" alt="" />
+        <video autoplay muted loop src="/images/herbal remedy 2.mp4"></video>
+        <a href="/category/herbalremedies" class="dets">Herbal Remedies</a>
+      </div>
+      <div class="box">
+        <img src="/images/yoga1.jpg" alt="" />
+        <video autoplay muted loop src="/images/yoga1.mp4"></video>
+        <a href="/category/healthandwellness" class="dets"
+          >Health and Wellness</a
+        >
+      </div>
+      <div class="box">
+        <img src="/images/Indian thali 2.jpg" alt="" />
+        <video autoplay muted loop src="/images/indian thali.mp4"></video>
+        <a href="/category/dietandnutrition" class="dets">Diet and Nutrition</a>
+      </div>
+      <div class="box">
+        <img src="/images/Meditating Buddha.jfif" alt="" />
+        <video
+          autoplay
+          muted
+          loop
+          src="/videos/pexels-cottonbro-5415978 (540p).mp4"
+        ></video>
+        <a href="/category/mindfulnessandmeditation" class="dets"
+          >Mindfulness and Meditation</a
+        >
+      </div>
+      <div class="box">
+        <img src="/images/Indian thali 2.jpg" alt="" />
+        <video autoplay muted loop src="/images/indian thali.mp4"></video>
+        <a href="/category/massageandrelaxation" class="dets"
+          >Massage and Relaxation</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div id="page4">
+    <h1 id="testomonial-heading">What users say about us</h1>
+    <div id="swiperdiv">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <% if (testomonials.length > 0) { %> <%
+          testomonials.forEach(function(testomonial) { %>
+          <div class="swiper-slide">
+            <div class="swiper-feedback">
+              <p id="testomonial-desc">" <%= testomonial.feedback %> "</p>
+              <div>
+                <% if (testomonial.user && testomonial.user.profileimage) { %>
+                <img
+                  src="/images/uploads/<%= testomonial.user.profileimage %>"
+                  id="testomonial-userimg"
+                  alt="User profile image"
+                />
+                <% } else { %>
+                <img
+                  src="/images/girl doing yoga.jpg"
+                  id="testomonial-userimg"
+                  alt="Default profile image"
+                />
+                <% } %>
+              </div>
+              <p id="testomonial-user"><%= testomonial.username %></p>
+            </div>
+          </div>
+          <% }) %> <% } else { %>
+          <p>No testimonials available.</p>
+          <% } %>
+          <!-- <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div> -->
+          <!-- <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div> -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  <% include ./common/pagefooter.ejs %>
+
+  <!-- <footer>
+      Created by humans, for the Humanity !
+    </footer> -->
+</div>
+
+<% include ./common/footer.ejs %>

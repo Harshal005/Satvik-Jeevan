@@ -1,0 +1,38 @@
+<% include ./Admin/adminheader.ejs %>
+<% include ./Admin/sidebar.ejs %>
+<% include ./Admin/adminnavbar.ejs %>
+
+    <div class="maincontent">
+            <% if(posts.length > 0) { %>
+                <table class="tbl">
+            <tr>
+                <th>Post Id</th>
+                <th>User Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+                <!-- <th>Description</th> -->
+            </tr>
+                <% posts.forEach(function(post) {  %>
+            <tr>
+                <td class="userid"><%=  post._id%></td>
+                <td><%= post.user %></td>
+                <td><%= post.title %></td>
+                <!-- <td><%= post.description %></td> -->
+                
+                <td>
+                    <div class="useractions">
+                        <a href="" class="viewuser">View</a>
+                        <a href="" class="deleteuser">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+            <% } else { %>
+                
+                    <p style="color: red; margin: 20% 0 0 40%; font-size: 2vw;" >No Posts records</p>
+                
+                <% }%>
+    </div>
+
+<% include ./Admin/adminfooter.ejs %>

@@ -1,0 +1,42 @@
+<% include ./common/header.ejs %>
+<% include ./common/navbar.ejs %>
+
+<div class="apply-main">
+    <div class="apply-inner">
+
+        <h1 class="flex justify-center pt-4 text-2xl font-semibold ">Apply as a Guru(Trainer) on Satvik Jeevan</h1>
+        <form action="/trainerrequest" method="post" enctype="multipart/form-data">
+      Enter full name : <input type="text" class="mt-5 black-text" id="" name="fullname" required /><br />
+      Select Gender : <input type="radio" class="mt-4"  name="gender" id="Male" required value="Male"/>Male
+      <input type="radio" name="gender" class="mt-4" id="Female" value="Female" />Female <br />
+      Select Expertise :
+      
+      <select id="trainer-qualification"  name="trainerqualification" class="mt-4 black-text" required>
+          <option value="other">Other</option>
+        <option value="Yoga Instructor">Yoga Instructors</option>
+        <option value="Nutritionists">Nutritionists</option>
+        <option value="Dietitians">Dietitians</option>
+        <option value="Health Coaches">Health Coaches</option>
+        <option value="Meditation Instructor">Meditation Instructor</option>
+        <option value="Mindfullness Coach">Mindfullness Coach</option>
+        <option value="Stress Management Counselors">Stress Management Counselors</option>
+        <option value="Psychologists">Psychologists</option>
+        <option value="Ayurvedic Practitioner">Ayurvedic Practitioner</option>
+        <option value="Herbalists">Herbalists</option>
+        <option value="Naturopathic Doctor">Naturopathic Doctor</option>
+        <option value="Breathwork Instructor">Breathwork Instructor</option>
+        <option value="Massage Therapists">Massage Therapists</option>
+        <option value="Energy Healers">Energy Healers</option>
+        <option value="Sleep Consultants">Sleep Consultants</option>
+        <option value="Athletic Trainers">Athletic Trainers</option>
+    </select>
+    <br />
+    Years of experience : <input type="number" class="mt-4 black-text" name="experience" id="" required size="2" min="0" max="50"/><br />
+      Upload Certificate : <input type="file" class="mt-4 " name="certificate" id="" required />
+      <br />
+      <input type="submit" value="Submit" class="p-2 bg-[#A10035] mt-4 rounded-md text-[#FFE7BF] cursor-pointer"/>
+    </form>
+</div>
+</div>
+    <% include ./common/footer.ejs %>
+<!-- <% include ./common/pagefooter.ejs %> -->

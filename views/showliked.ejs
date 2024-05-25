@@ -1,0 +1,43 @@
+<% include ./common/header.ejs %>
+<% include ./common/navbar.ejs %>
+
+    <!-- <div class="w-full min-h-screen bg-orange-400 px-10 py-8">
+        <div class="cards flex flex-wrap gap-20">
+            <% user.uploadedposts.forEach(function(elem) { %>
+                <div class="card w-80">
+                    <div class="w-full h-60 rounded-lg bg-zinc-300 overflow-hidden">
+                        <img class="w-full h-full object-cover" 
+                        src="/images/uploads/<%= elem.image %>" alt="">
+                    </div>
+                    <h5 class="mt-2 font-semibold text-xl"><%= elem.title %></h5>
+                </div>
+            <% })%>
+        </div>
+    </div> -->
+
+    
+<div class="sap-bg">
+  <h1 class="pageheading">Your Liked Posts</h1>
+
+  <div class="cards-section">
+   
+    <% likedPosts.forEach(function(elem) { %>
+
+    <div class="cards">
+      <img
+        src="/images/uploads/<%= elem.image %>"
+        alt=""
+        class="cards-img"
+      />
+      <hr />
+      <div class="card-content">
+        <h2 class="card-title"><%= elem.title %></h2>
+      </div>
+      <a href="/category/<%= elem.category %>/<%= elem._id %>" class="explore-card">Explore</a>
+    </div>
+    <% }); %> 
+    
+  </div>
+</div>
+    
+<% include ./common/footer.ejs %>

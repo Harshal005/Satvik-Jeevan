@@ -1,0 +1,39 @@
+<% include ./Admin/adminheader.ejs %>
+<% include ./Admin/sidebar.ejs %>
+<% include ./Admin/adminnavbar.ejs %>
+<div class="maincontent">
+                    <% if(trequests.length > 0) { %>
+                <table class="tbl">
+            <tr>
+                <th>User Id</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Expertise</th>
+                <th>Experience</th>
+                <th>Certificate</th>
+                <th>Actions</th>
+            </tr>
+                <% trequests.forEach(function(trequest) {  %>
+            <tr>
+                <td class="userid"><%=  trequest._id%></td>
+                <td><%= trequest.fullname %></td>
+                <td><%= trequest.Gender %></td>
+                <td><%= trequest.Expertise %></td>
+                <td><%= trequest.Experience %></td>
+                <td><a href="/images/uploads/<%= trequest.Certificate %>" target="_blank"><%= trequest.Certificate %></a></td>
+                
+                <td>
+                    <div class="useractions">
+                        <a href="/acpttrainerrqst/<%= trequest._id %>" class="viewuser">Accept</a>
+                        <a href="/dlttrainerrqst/<%= trequest._id %>" class="deleteuser">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+            <% } else { %>
+                    <p style="color: red; margin: 20% 0 0 40%; font-size: 2vw;" >No Trainer Request records</p>
+                <% }%>
+    </div>
+
+<% include ./Admin/adminfooter.ejs %>

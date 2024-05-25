@@ -1,0 +1,28 @@
+<% include ./common/header.ejs %>
+
+
+
+<div class="w-full h-screen bg-cover bg-[url('/images/dive.jpg')] flex items-center justify-center">
+  <div class="sm:w-[30vw] sm:min-h-[68vh] bg-zinc-100 px-4 py-14 rounded-lg">
+    
+      <h1 class="text-3xl mb-2 leading-none text-center capitalize">Namaste Please Login </h1>
+    
+      <% if(showerror.length > 0) { %>
+        <p class="text-red-700 text-center"><b><%= showerror %></b></p>
+        <% } %>
+    <form action="/login" method="post">
+      <input class="border-2 rounded-md block w-full mt-8 px-3 py-2" required type="text" name="username" id="username" placeholder="username">
+      <input class="border-2 rounded-md block w-full mt-4 px-3 py-2" required type="password" name="password" id="password" placeholder="password">
+      <!-- <a class="mt-2 inline-block font-semibold" href="#">Forget Password ?</a> -->
+      <input class="border-2 rounded-full block w-full mt-5 px-3 py-2 bg-[#A10035] text-white cursor-pointer" value="login" type="submit">
+      <a class="inline-block mt-7 text-sm font-semibold w-full text-zinc-700 text-center" href="/register">Don't have an account ?</a>
+      <div class="border-2 rounded-full flex w-full mt-5 px-3 py-2 bg-[#A10035] text-white justify-center">
+        <a href="/" class="">Continue Without Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+  
+  
+
+<% include ./common/footer.ejs %>

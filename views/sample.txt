@@ -1,0 +1,12 @@
+<!-- <% if(posts.length > 0) { %>
+            <% posts.forEach(function(suggestedpost) { %>
+        <div class="swiper-slide">
+            <a href="/profile">
+
+                <img src="/images/<%= suggestedpost.image %>" alt="" height="300px" width="300px">
+                <title><% suggestedpost.title %></title>
+            </a>
+        </div>
+        <% }); } else { %>
+          <h1 class="alsoread">No posts available</h1>
+          <% } %> -->
